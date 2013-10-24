@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PMDMConversorMoneda</string>
+    <string name="action_settings">Settings</string>
+    <string name="moneda1">Pesetas:</string>
+    <string name="moneda2">Euros:</string>
+    <string name="menu">Menú</string>
+    <string name="cambiarM">Cambiar Moneda</string>
+    <string name="cambiarF">Cambiar Factor Conversión</string>
+    <string name="salir">Salir</string>
+    <string name="title_activity_cambiar_moneda">CambiarMoneda</string>
+    <string name="introMoneda">Introduzca la moneda que desee</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="title_activity_cambiar_conversion">CambiarConversion</string>
+    <string name="introFac">Introduzca el factor de conversión (X unidades Moneda1/1 unidad Moneda2)</string>
+    <string name="aceptar1">Aceptar</string>
+    <string name="cancelar1">Cancelar</string>
+
+</resources>
