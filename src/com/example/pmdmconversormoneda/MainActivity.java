@@ -18,29 +18,26 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	TextView monedas1,monedas2;
+	TextView monedas1,monedas2,factor;
 	int REQUEST_TEXT;
-	double conversion=166.386;
+	double conversion;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		final EditText moneda1=(EditText) findViewById(R.id.editText3);
+		final EditText moneda1=(EditText) findViewById(R.id.editText);
 		final EditText moneda2=(EditText) findViewById(R.id.editText2);
 		monedas1=(TextView) findViewById(R.id.textView1);
 		monedas2=(TextView) findViewById(R.id.textView2);
+		factor=(TextView) findViewById(R.id.textView4);
+		factor.setText("166.386");
 		moneda1.requestFocus();
 		moneda1.setOnKeyListener(new OnKeyListener() { 
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				try{
-//					if(moneda1.getText().equals("Dolares:")){
-//						conversion=1.20;
-//					}
-//					if(moneda1.getText().equals("Libras:")){
-//						conversion=0.852418;
-//					}
+					conversion=Float.parseFloat(factor.getText().toString());
 					Float m1=Float.parseFloat(moneda1.getText().toString());
-					final Float operacion1=(float) (m1/166.386);
+					final Float operacion1=(float) (m1/conversion);
 					moneda2.setText(operacion1.toString()); 
 					return true;
 				}catch(NumberFormatException nfe){
@@ -80,6 +77,10 @@ public class MainActivity extends Activity {
 			//actividad principal pueda acceder a esos datos. Hay dialogos predefinidos
 			//en los cuales existe el return.
 		}
+		else if(item.getItemId()==R.id.SubmnuSalir){
+			this.finish();
+			return true;
+		}
 		else
 		{
 			return super.onOptionsItemSelected(item);
@@ -94,11 +95,19 @@ public class MainActivity extends Activity {
 		}
 		if(requestCode==1){
 			if(resultCode==Activity.RESULT_OK){
-				monedas1.setText(data.getExtras().get("Moneda1").toString());
-				monedas2.setText(data.getExtras().get("Moneda2").toString());
-				conversion=data.getExtras().getDouble("Factor");
+				monedas1.setText(data.getExtras().get("Moneda3").toString());
+				monedas2.setText(data.getExtras().get("Moneda4").toString());
+				factor.setText(data.getExtras().get("Factor").toString());
 			}
 		}
 	}
-
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			this.finish();
+			// Si el listener devuelve true, significa que el evento esta procesado, y nadie debe hacer nada mas
+			return true;
+		}
+		//para las demas cosas, se reenvia el evento al listener habitual
+		return super.onKeyDown(keyCode, event);
+	} 
 }

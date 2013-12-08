@@ -3,6 +3,7 @@ package com.example.pmdmconversormoneda;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,7 +15,9 @@ import android.widget.Spinner;
 
 public class CambiarConversion extends Activity {
 	String datos[]={"Dólares","Euros","Libras","Pesetas"};
-	String monedas3,monedas4,factorTexto;
+	String dato[]={"Euros"};
+	String monedas3,monedas4;
+	Editable factorTexto;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,7 +35,7 @@ public class CambiarConversion extends Activity {
 			}
 		});
 		
-		ArrayAdapter<String> miAdaptador2=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
+		ArrayAdapter<String> miAdaptador2=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, dato);
 		final Spinner cmbOpciones2=(Spinner) findViewById(R.id.spinner4);
 		cmbOpciones2.setAdapter(miAdaptador2);
 		cmbOpciones2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {          
@@ -44,9 +47,10 @@ public class CambiarConversion extends Activity {
 				// TODO Auto-generated method stub 
 			}
 		});
+		cmbOpciones2.setEnabled(false);
 		
-		final EditText factor=(EditText) findViewById(R.id.editText3);
-		factorTexto=factor.getText().toString();
+		final EditText factor=(EditText) findViewById(R.id.editText1);
+		factorTexto=factor.getText();
 		
 		final Button btnAceptar=(Button) findViewById(R.id.button3);
 		btnAceptar.setOnClickListener(new OnClickListener()
@@ -75,7 +79,7 @@ public class CambiarConversion extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.cambiar_conversion, menu);
-		return true;
+		return false;
 	}
 
 }

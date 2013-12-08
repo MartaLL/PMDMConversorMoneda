@@ -21,7 +21,7 @@ public class CambiarMoneda extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_cambiar_moneda);
 		ArrayAdapter<String> miAdaptador1=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
-		final Spinner cmbOpciones1=(Spinner) findViewById(R.id.spinner3);
+		final Spinner cmbOpciones1=(Spinner) findViewById(R.id.spinner1);
 		cmbOpciones1.setAdapter(miAdaptador1);
 		cmbOpciones1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {          
 			public void onItemSelected(AdapterView<?> parent, android.view.View v, int position, long id) {
@@ -37,7 +37,7 @@ public class CambiarMoneda extends Activity {
 		cmbOpciones2.setAdapter(miAdaptador2);
 		cmbOpciones2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {          
 			public void onItemSelected(AdapterView<?> parent, android.view.View v, int position, long id) {
-				monedas2 = parent.getItemAtPosition(position).toString()+":";
+				monedas2 = parent.getItemAtPosition(position).toString()+": ";
 			}
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
@@ -46,7 +46,7 @@ public class CambiarMoneda extends Activity {
 		});
 		cmbOpciones2.setEnabled(false);
 		
-		final Button btnAceptar=(Button) findViewById(R.id.button3);
+		final Button btnAceptar=(Button) findViewById(R.id.button1);
 		btnAceptar.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v)
@@ -58,7 +58,7 @@ public class CambiarMoneda extends Activity {
 				CambiarMoneda.this.finish();
 			}
 		});
-		final Button btnCancelar=(Button) findViewById(R.id.button4);
+		final Button btnCancelar=(Button) findViewById(R.id.button2);
 		btnCancelar.setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v)

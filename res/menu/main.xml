@@ -1,19 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
+	<item
+		android:id="@+id/SubmnuCambM"
+        android:title="@string/cambiarM"/>
     <item
-        android:id="@+id/Mnu"
-        android:title="@string/menu">
-        <menu>
-            <item
-                android:id="@+id/SubmnuCambM"
-                android:title="@string/cambiarM"/>
-            <item
-                android:id="@+id/SubmnuCambF"
-                android:title="@string/cambiarF"/>
-            <item
-                android:id="@+id/SubmnuSalir"
-                android:title="@string/salir"/>
-        </menu>
-    </item>
-
+        android:id="@+id/SubmnuCambF"
+        android:title="@string/cambiarF"/>
+    <item
+        android:id="@+id/SubmnuSalir"
+        android:title="@string/salir"/>
 </menu>

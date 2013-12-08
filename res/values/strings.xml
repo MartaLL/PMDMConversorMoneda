@@ -14,8 +14,9 @@
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>
     <string name="title_activity_cambiar_conversion">CambiarConversion</string>
-    <string name="introFac">Introduzca el factor de conversión (X unidades Moneda1/1 unidad Moneda2)</string>
+    <string name="introFac">Introduzca el factor de conversión (X unidades Moneda1/1€)</string>
     <string name="aceptar1">Aceptar</string>
     <string name="cancelar1">Cancelar</string>
+    <string name="factor">Factor de conversión:</string>
 
 </resources>

@@ -17,30 +17,32 @@
         android:layout_marginTop="75dp"
         android:text="@string/introMoneda" />
 
-    <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1" />
-
     <TextView
         android:id="@+id/TextView01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/spinner3"
-        android:layout_below="@+id/spinner3"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/spinner1"
         android:text="@string/introMoneda" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/textView1" />
 
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/TextView01"
+        android:layout_alignRight="@+id/TextView01"
         android:layout_below="@+id/TextView01" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/spinner2"
@@ -48,10 +50,10 @@
         android:text="@string/aceptar" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/TextView01"
+        android:layout_alignRight="@+id/spinner2"
         android:layout_below="@+id/spinner2"
         android:text="@string/cancelar" />
 
